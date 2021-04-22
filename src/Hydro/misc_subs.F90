@@ -3658,7 +3658,7 @@
 !     Given global coord. (may not be on surface of earth), find lat/lon in radian
 !===============================================================================
       subroutine compute_ll(xg,yg,zg,rlon,rlat)
-      use schism_glbl, only : rkind,pi,errmsg
+      use schism_glbl, only : rkind,pi,errmsg,rearth_pole
       use schism_msgp, only : parallel_abort
       implicit none
       real(rkind),intent(in) :: xg,yg,zg
@@ -3672,7 +3672,7 @@
       endif
 
       rlon=atan2(yg,xg) !(-pi,pi]
-      rlat=asin(zg/rad)
+      rlat=asin(zg/rearth_pole) !rad)
  
       end subroutine compute_ll
 
