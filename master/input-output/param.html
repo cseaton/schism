@@ -2206,7 +2206,7 @@ If <code>itr_met=4</code> (WENO), there are several additional parameters. The m
 <p>If <code>itur=4</code>, GOTM turbulence model is invoked; the user needs to turn on pre-processing flag <code>USE_GOTM</code> in makefile 
 and recompile (GOTM5.2 uses cmake, so does not need to be pre-compiled). In this case, the minimum and maximum 
 viscosity/diffusivity are still specified in <code>diffmin.gr3</code> 
-and <code>diffmax.gr3</code>. In addition, GOTM also requires an input file called <code>gotmturb.inp</code>. There are some 
+and <code>diffmax.gr3</code>. In addition, GOTM also requires an input file called <code>gotmturb.inp</code> (the file is in NML format. If it is absent in a GOTM run, GOTM will error out with a notice that gotmturb.nml is missing, but SCHISM expects the file to be named .inp). There are some 
 ready-made samples for this input in the source code bundle. An example for the Columbia River 
 (with steady state Richardson number set to ri_st= 0.15) is included in 'sample_inputs/'. If you wish to tune some parameters 
 inside, you may consult <a href="https://gotm.net">gotm.net</a> for more details.</p>
